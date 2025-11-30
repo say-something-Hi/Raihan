@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: dhaka-market
+    env: node
+    plan: free
+    buildCommand: |-
+      echo "No build needed for direct Node.js app"
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: SESSION_SECRET
+        generateValue: true
